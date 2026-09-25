@@ -1,21 +1,20 @@
 import siteInfo from '../data/siteInfo'
+import Button from './Button'
+import Container from './Container'
 
 function Hero() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-24 text-center">
-      <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+    <Container className="py-24 text-center">
+      <h1 className="text-4xl font-bold tracking-tight text-ink sm:text-5xl">
         {siteInfo.tagline}
       </h1>
-      <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600">
+      <p className="mx-auto mt-4 max-w-2xl text-lg text-body">
         {siteInfo.description}
       </p>
-      <a
-        href="#contact"
-        className="mt-8 inline-block rounded-md bg-slate-900 px-6 py-3 text-sm font-semibold text-white hover:bg-slate-700"
-      >
+      <Button href="#contact" className="mt-8 inline-block">
         {siteInfo.ctaLabel}
-      </a>
-    </section>
+      </Button>
+    </Container>
   )
 }
 

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import siteInfo from '../data/siteInfo'
 import Button from './Button'
+import Container from './Container'
 import Logo from './Logo'
 import MenuButton from './MenuButton'
 import NavLinks from './NavLinks'
@@ -10,7 +11,7 @@ function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-surface">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <Container>
         <div className="relative flex h-16 items-center justify-between">
           <Logo />
 
@@ -36,7 +37,7 @@ function Navbar() {
             </Button>
           </nav>
         )}
-      </div>
+      </Container>
     </header>
   )
 }
