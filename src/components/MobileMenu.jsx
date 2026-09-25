@@ -30,7 +30,7 @@ function MobileMenu({ onClose }) {
 
       <div className="shrink-0 border-t border-border p-5">
         <Button href="#contact" className="block text-center" onClick={onClose}>
-          {siteInfo.ctaLabel}
+          {siteInfo.navCtaLabel}
         </Button>
       </div>
     </div>

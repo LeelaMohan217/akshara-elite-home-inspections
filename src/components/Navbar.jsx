@@ -21,7 +21,7 @@ function Navbar() {
           </nav>
 
           <Button href="#contact" className="hidden md:block">
-            {siteInfo.ctaLabel}
+            {siteInfo.navCtaLabel}
           </Button>
 
           <MenuButton open={false} onClick={() => setOpen(true)} />
