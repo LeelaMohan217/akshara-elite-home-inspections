@@ -4,13 +4,14 @@ import Button from './Button'
 import Container from './Container'
 import Logo from './Logo'
 import MenuButton from './MenuButton'
+import MobileMenu from './MobileMenu'
 import NavLinks from './NavLinks'
 
 function Navbar() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-surface">
+    <header className="sticky top-0 z-40 border-b border-border bg-surface">
       <Container>
         <div className="relative flex h-16 items-center justify-between">
           <Logo />
@@ -23,21 +24,11 @@ function Navbar() {
             {siteInfo.ctaLabel}
           </Button>
 
-          <MenuButton open={open} onClick={() => setOpen((v) => !v)} />
+          <MenuButton open={false} onClick={() => setOpen(true)} />
         </div>
-
-        {open && (
-          <nav className="flex flex-col gap-4 border-t border-border py-4 md:hidden">
-            <NavLinks
-              className="block py-1"
-              onLinkClick={() => setOpen(false)}
-            />
-            <Button href="#contact" className="block text-center">
-              {siteInfo.ctaLabel}
-            </Button>
-          </nav>
-        )}
       </Container>
+
+      {open && <MobileMenu onClose={() => setOpen(false)} />}
     </header>
   )
 }
