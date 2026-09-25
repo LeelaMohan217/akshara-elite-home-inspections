@@ -8,7 +8,7 @@ function NavLinks({ className = '', onLinkClick }) {
           key={link.href}
           href={link.href}
           onClick={onLinkClick}
-          className={`text-sm font-medium text-body hover:text-ink ${className}`}
+          className={`text-base font-medium text-body hover:text-ink ${className}`}
         >
           {link.label}
         </a>

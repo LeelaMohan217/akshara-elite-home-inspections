@@ -1,19 +1,13 @@
-import AnnouncementBar from './components/AnnouncementBar'
-import Contact from './components/Contact'
 import Footer from './components/Footer'
-import Hero from './components/Hero'
 import Navbar from './components/Navbar'
-import Services from './components/Services'
+import Home from './pages/Home'
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
-      <AnnouncementBar />
+    <div className="min-h-screen bg-surface text-slate-900">
       <Navbar />
       <main>
-        <Hero />
-        <Services />
-        <Contact />
+        <Home />
       </main>
       <Footer />
     </div>

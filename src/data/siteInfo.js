@@ -1,7 +1,7 @@
 const siteInfo = {
   name: 'Akshara Elite Home Inspections',
-  eyebrow: 'Home Inspections',
-  tagline: 'Thorough Home Inspections You Can Trust',
+  eyebrow: 'Certified Home Inspections',
+  tagline: 'Know the home before you make it yours.',
   description:
     'Akshara Elite Home Inspections delivers detailed, honest assessments to protect your investment before you buy or sell.',
   ctaLabel: 'Schedule an Inspection',
@@ -12,6 +12,9 @@ const siteInfo = {
   contactHeading: 'Get in Touch',
   contactDescription:
     'Ready to book your inspection? Reach out and we’ll take it from there.',
+  phone: '+1 (555) 123-4567',
+  email: 'info@aksharaelite.com',
+  address: '123 Main Street, Suite 100, San Antonio, TX 78201',
 }
 
 export default siteInfo
