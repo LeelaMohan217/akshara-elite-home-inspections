@@ -13,18 +13,22 @@ function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-surface">
       <Container>
-        <div className="relative flex h-16 items-center justify-between">
-          <Logo />
+        <div className="flex h-16 items-center justify-between gap-8">
+          <div className="flex items-center gap-10">
+            <Logo />
 
-          <nav className="hidden md:absolute md:left-1/2 md:flex md:-translate-x-1/2 md:gap-8">
-            <NavLinks />
-          </nav>
+            <nav className="hidden lg:flex lg:gap-8">
+              <NavLinks />
+            </nav>
+          </div>
 
-          <Button href="#contact" className="hidden md:block">
-            {siteInfo.navCtaLabel}
-          </Button>
+          <div className="flex items-center">
+            <Button href="#contact" className="hidden whitespace-nowrap lg:block">
+              {siteInfo.navCtaLabel}
+            </Button>
 
-          <MenuButton open={false} onClick={() => setOpen(true)} />
+            <MenuButton open={false} onClick={() => setOpen(true)} />
+          </div>
         </div>
       </Container>
 

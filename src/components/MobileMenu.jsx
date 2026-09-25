@@ -15,7 +15,7 @@ function MobileMenu({ onClose }) {
   }, [])
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col bg-surface md:hidden">
+    <div className="fixed inset-0 z-50 flex flex-col bg-surface lg:hidden">
       <div className="flex h-16 shrink-0 items-center justify-between border-b border-border px-5">
         <Logo />
         <MenuButton open onClick={onClose} />

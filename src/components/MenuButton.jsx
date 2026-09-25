@@ -5,7 +5,7 @@ function MenuButton({ open, onClick }) {
       onClick={onClick}
       aria-label={open ? 'Close menu' : 'Open menu'}
       aria-expanded={open}
-      className="inline-flex h-10 w-10 items-center justify-center rounded-md text-ink md:hidden"
+      className="inline-flex h-10 w-10 items-center justify-center rounded-md text-ink lg:hidden"
     >
       <svg
         width="22"
