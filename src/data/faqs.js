@@ -17,7 +17,7 @@ const faqs = [
   {
     question: 'When will I receive my report?',
     answer:
-      'You’ll receive a detailed, photo-documented report within 24 hours of the inspection.',
+      'You’ll receive a detailed, photo-documented report within 48 hours of the inspection.',
   },
   {
     question: 'What does the inspection cover?',

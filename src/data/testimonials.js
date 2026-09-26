@@ -13,7 +13,7 @@ const testimonials = [
   },
   {
     quote:
-      'Booking was simple, the inspector was on time, and we had the full report within a day. Having it before listing made selling so much smoother.',
+      'Booking was simple, the inspector was on time, and we had the full report within two days. Having it before listing made selling so much smoother.',
     name: 'Client Name',
     role: 'Home Seller',
   },

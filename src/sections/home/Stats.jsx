@@ -1,7 +1,7 @@
-import stats from '../../data/stats'
+import defaultStats from '../../data/stats'
 import Container from '../../components/Container'
 
-function Stats() {
+function Stats({ stats = defaultStats }) {
   return (
     <section className="border-y border-border py-12">
       <Container>
