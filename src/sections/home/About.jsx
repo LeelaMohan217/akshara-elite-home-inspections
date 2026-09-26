@@ -1,8 +1,8 @@
-import aboutImage from '../assets/about-inspector.webp'
-import about from '../data/about'
-import Button from '../components/Button'
-import Container from '../components/Container'
-import Eyebrow from '../components/Eyebrow'
+import aboutImage from '../../assets/about-inspector.webp'
+import about from '../../data/about'
+import Button from '../../components/Button'
+import Container from '../../components/Container'
+import Eyebrow from '../../components/Eyebrow'
 
 function About() {
   return (
@@ -30,7 +30,7 @@ function About() {
           </p>
 
           <Button
-            href="#contact"
+            href="/contact"
             className="order-5 mt-8 inline-block justify-self-center lg:order-none lg:col-start-2 lg:row-start-5 lg:mt-0 lg:justify-self-start"
           >
             {about.ctaLabel}

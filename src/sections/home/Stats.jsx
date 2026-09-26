@@ -1,5 +1,5 @@
-import stats from '../data/stats'
-import Container from '../components/Container'
+import stats from '../../data/stats'
+import Container from '../../components/Container'
 
 function Stats() {
   return (

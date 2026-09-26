@@ -1,4 +1,4 @@
-import siteInfo from '../data/siteInfo'
+import siteInfo from '../../data/siteInfo'
 
 function Contact() {
   return (

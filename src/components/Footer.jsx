@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import legalLinks from '../data/legalLinks'
 import navLinks from '../data/navLinks'
 import siteInfo from '../data/siteInfo'
@@ -23,12 +24,12 @@ function Footer() {
             <ul className="mt-4 flex flex-col gap-3">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-base text-body hover:text-accent"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

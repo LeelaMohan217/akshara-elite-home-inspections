@@ -1,17 +1,18 @@
+import { Link } from 'react-router-dom'
 import navLinks from '../data/navLinks'
 
 function NavLinks({ className = '', onLinkClick }) {
   return (
     <>
       {navLinks.map((link) => (
-        <a
+        <Link
           key={link.href}
-          href={link.href}
+          to={link.href}
           onClick={onLinkClick}
           className={`text-base font-medium text-body hover:text-ink ${className}`}
         >
           {link.label}
-        </a>
+        </Link>
       ))}
     </>
   )

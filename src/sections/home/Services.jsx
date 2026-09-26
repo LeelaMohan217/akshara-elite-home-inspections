@@ -1,6 +1,6 @@
-import Container from '../components/Container'
-import ServiceCard from '../components/ServiceCard'
-import services from '../data/services'
+import Container from '../../components/Container'
+import ServiceCard from '../../components/ServiceCard'
+import services from '../../data/services'
 
 function Services() {
   return (

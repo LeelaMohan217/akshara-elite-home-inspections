@@ -1,6 +1,6 @@
-import processContent from '../data/process'
-import Container from '../components/Container'
-import Eyebrow from '../components/Eyebrow'
+import processContent from '../../data/process'
+import Container from '../../components/Container'
+import Eyebrow from '../../components/Eyebrow'
 
 function Process() {
   return (

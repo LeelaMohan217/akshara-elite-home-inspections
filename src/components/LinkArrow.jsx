@@ -1,11 +1,13 @@
+import { Link } from 'react-router-dom'
+
 function LinkArrow({ href, className = '', children }) {
   return (
-    <a
-      href={href}
+    <Link
+      to={href}
       className={`text-base font-medium text-[#080808] underline underline-offset-2 ${className}`}
     >
       {children} →
-    </a>
+    </Link>
   )
 }
 

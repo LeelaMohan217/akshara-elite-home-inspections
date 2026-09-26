@@ -30,7 +30,7 @@ function MobileMenu({ onClose }) {
       </nav>
 
       <Container className="shrink-0 border-t border-border py-5">
-        <Button href="#contact" className="block text-center" onClick={onClose}>
+        <Button href="/contact" className="block text-center" onClick={onClose}>
           {siteInfo.navCtaLabel}
         </Button>
       </Container>

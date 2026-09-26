@@ -20,7 +20,7 @@ function Navbar() {
             <NavLinks />
           </nav>
 
-          <Button href="#contact" className="hidden whitespace-nowrap lg:block">
+          <Button href="/contact" className="hidden whitespace-nowrap lg:block">
             {siteInfo.navCtaLabel}
           </Button>
 

@@ -1,8 +1,8 @@
-import Button from '../components/Button'
-import Container from '../components/Container'
-import Eyebrow from '../components/Eyebrow'
-import LinkArrow from '../components/LinkArrow'
-import siteInfo from '../data/siteInfo'
+import Button from '../../components/Button'
+import Container from '../../components/Container'
+import Eyebrow from '../../components/Eyebrow'
+import LinkArrow from '../../components/LinkArrow'
+import siteInfo from '../../data/siteInfo'
 
 function Hero() {
   return (
@@ -18,10 +18,10 @@ function Hero() {
       </p>
 
       <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-        <Button href="#contact" size="lg">
+        <Button href="/contact" size="lg">
           {siteInfo.ctaLabel}
         </Button>
-        <LinkArrow href="#services">{siteInfo.secondaryCtaLabel}</LinkArrow>
+        <LinkArrow href="/services">{siteInfo.secondaryCtaLabel}</LinkArrow>
       </div>
     </Container>
   )
