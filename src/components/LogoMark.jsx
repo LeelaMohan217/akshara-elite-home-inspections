@@ -1,7 +1,7 @@
-function LogoMark({ className = 'h-9 w-9' }) {
+function LogoMark({ className = 'h-[0.7em] w-auto' }) {
   return (
     <svg
-      viewBox="0 0 100 100"
+      viewBox="18 20 80 68"
       className={className}
       aria-hidden="true"
     >
