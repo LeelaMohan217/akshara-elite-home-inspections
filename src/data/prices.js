@@ -18,9 +18,8 @@ const prices = {
     },
     {
       name: '2BHK Flat',
-      description: 'Our most popular plan for 2BHK apartments.',
+      description: 'Ideal for 2BHK apartments and mid-sized flats.',
       price: '₹6,700',
-      popular: true,
       features: [
         'Everything in 1BHK Flat',
         'Detailed electrical & plumbing check',

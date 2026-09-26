@@ -13,8 +13,7 @@ const middleStart = planCount * Math.floor(copies / 2)
 const slides = Array.from({ length: copies }, (_, copy) =>
   prices.plans.map((plan, index) => ({ plan, index, copy })),
 ).flat()
-const initialIndex =
-  middleStart + Math.max(0, prices.plans.findIndex((plan) => plan.popular))
+const initialIndex = middleStart
 
 // Cards shrink step by step away from the center, and are pulled inward so
 // the visible gap between neighbours stays the same.
@@ -192,6 +191,7 @@ function PricingGrid() {
                 {...plan}
                 priceUnit={prices.priceUnit}
                 ctaLabel={prices.ctaLabel}
+                highlighted={isActive}
               />
             </div>
           )

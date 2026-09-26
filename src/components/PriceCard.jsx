@@ -7,23 +7,18 @@ function PriceCard({
   priceUnit,
   description,
   features,
-  popular = false,
+  highlighted = false,
   ctaLabel,
 }) {
   return (
     <div
-      className={`flex h-full flex-col rounded-2xl bg-white p-6 sm:p-8 ${
-        popular ? 'border border-accent ring-1 ring-accent' : 'border border-border'
+      className={`flex h-full flex-col rounded-2xl border bg-white p-6 transition-[border-color,box-shadow] duration-500 sm:p-8 ${
+        highlighted
+          ? 'border-accent ring-1 ring-accent'
+          : 'border-border ring-1 ring-transparent'
       }`}
     >
-      <div className="flex items-center justify-between gap-4">
-        <h3 className="text-lg font-semibold text-ink">{name}</h3>
-        {popular && (
-          <span className="rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold text-accent">
-            Most popular
-          </span>
-        )}
-      </div>
+      <h3 className="text-lg font-semibold text-ink">{name}</h3>
       <p className="mt-2 text-sm text-body">{description}</p>
 
       <p className="mt-6 text-4xl font-bold text-ink">{price}</p>
