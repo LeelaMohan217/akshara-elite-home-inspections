@@ -5,16 +5,25 @@ import prices from '../../data/prices'
 import Container from '../../components/Container'
 import PriceCard from '../../components/PriceCard'
 
-const initialIndex = Math.max(
-  0,
-  prices.plans.findIndex((plan) => plan.popular),
-)
+const planCount = prices.plans.length
+const copies = 5
+const middleStart = planCount * Math.floor(copies / 2)
+// Plans are rendered several times; the middle copy is the "real" one and the
+// outer copies let the carousel loop without ever showing an edge.
+const slides = Array.from({ length: copies }, (_, copy) =>
+  prices.plans.map((plan, index) => ({ plan, index, copy })),
+).flat()
+const initialIndex =
+  middleStart + Math.max(0, prices.plans.findIndex((plan) => plan.popular))
 
 function PricingGrid() {
   const trackRef = useRef(null)
   const frameRef = useRef(0)
+  const settleRef = useRef(0)
+  const targetRef = useRef(null)
   const [active, setActive] = useState(initialIndex)
-  const lastIndex = prices.plans.length - 1
+  const [jumping, setJumping] = useState(false)
+  const activePlan = active % planCount
 
   const scrollToIndex = useCallback((index, behavior = 'smooth') => {
     const track = trackRef.current
@@ -28,8 +37,24 @@ function PricingGrid() {
 
   useEffect(() => {
     scrollToIndex(initialIndex, 'instant')
-    return () => cancelAnimationFrame(frameRef.current)
+    return () => {
+      cancelAnimationFrame(frameRef.current)
+      clearTimeout(settleRef.current)
+    }
   }, [scrollToIndex])
+
+  // Once scrolling stops on a card in an outer copy, jump instantly to the
+  // same card in the middle copy. Transitions are paused so it's invisible.
+  const recenter = (index) => {
+    if (index >= middleStart && index < middleStart + planCount) return
+    const target = middleStart + (index % planCount)
+    setJumping(true)
+    scrollToIndex(target, 'instant')
+    setActive(target)
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => setJumping(false)),
+    )
+  }
 
   const handleScroll = () => {
     cancelAnimationFrame(frameRef.current)
@@ -49,19 +74,37 @@ function PricingGrid() {
         }
       })
       setActive(closest)
+      clearTimeout(settleRef.current)
+      // Wait until an arrow/dot slide has reached its card before
+      // recentering, otherwise the instant jump would cut it short.
+      const heading = targetRef.current
+      const arrived = heading === null || heading === closest
+      settleRef.current = setTimeout(
+        () => {
+          targetRef.current = null
+          recenter(closest)
+        },
+        arrived ? 150 : 600,
+      )
     })
   }
 
-  const go = (index) =>
-    scrollToIndex(Math.min(lastIndex, Math.max(0, index)))
+  const go = (index) => {
+    const target = Math.min(slides.length - 1, Math.max(0, index))
+    targetRef.current = target
+    scrollToIndex(target)
+  }
+
+  // Step from the card we're heading to, so rapid clicks aren't lost.
+  const step = (delta) => go((targetRef.current ?? active) + delta)
 
   const handleKeyDown = (event) => {
     if (event.key === 'ArrowLeft') {
       event.preventDefault()
-      go(active - 1)
+      step(-1)
     } else if (event.key === 'ArrowRight') {
       event.preventDefault()
-      go(active + 1)
+      step(1)
     }
   }
 
@@ -75,24 +118,32 @@ function PricingGrid() {
         ref={trackRef}
         onScroll={handleScroll}
         onKeyDown={handleKeyDown}
+        onPointerDown={() => (targetRef.current = null)}
+        onWheel={() => (targetRef.current = null)}
         tabIndex={0}
         className="relative flex snap-x snap-mandatory gap-6 overflow-x-auto px-[calc(50%-min(42.5vw,190px))] py-8 outline-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
-        {prices.plans.map((plan, index) => {
-          const isActive = index === active
+        {slides.map(({ plan, index, copy }, slideIndex) => {
+          const isActive = slideIndex === active
+          const isClone = copy !== Math.floor(copies / 2)
           return (
             <div
-              key={plan.name}
+              key={`${copy}-${plan.name}`}
               role="group"
               aria-roledescription="slide"
-              aria-label={`${index + 1} of ${prices.plans.length}: ${plan.name}`}
+              aria-label={`${index + 1} of ${planCount}: ${plan.name}`}
+              aria-hidden={isClone || undefined}
               onClickCapture={(event) => {
                 if (!isActive) {
                   event.preventDefault()
-                  go(index)
+                  go(slideIndex)
                 }
               }}
-              className={`w-[min(85vw,380px)] shrink-0 snap-center rounded-2xl transition-all duration-500 ease-out motion-reduce:transition-none ${
+              className={`w-[min(85vw,380px)] shrink-0 snap-center rounded-2xl ${
+                jumping
+                  ? 'transition-none'
+                  : 'transition-all duration-500 ease-out motion-reduce:transition-none'
+              } ${
                 isActive
                   ? 'scale-100 opacity-100 shadow-2xl shadow-accent/15'
                   : 'scale-90 cursor-pointer opacity-50'
@@ -112,10 +163,9 @@ function PricingGrid() {
         <div className="flex items-center justify-center gap-6">
           <button
             type="button"
-            onClick={() => go(active - 1)}
-            disabled={active === 0}
+            onClick={() => step(-1)}
             aria-label="Previous plan"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-border text-ink disabled:opacity-30"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-border text-ink"
           >
             <FaChevronLeft className="h-4 w-4" aria-hidden="true" />
           </button>
@@ -125,11 +175,11 @@ function PricingGrid() {
               <button
                 key={plan.name}
                 type="button"
-                onClick={() => go(index)}
+                onClick={() => go(active - activePlan + index)}
                 aria-label={`Show ${plan.name}`}
-                aria-current={index === active}
+                aria-current={index === activePlan}
                 className={`h-2 rounded-full transition-all duration-300 ${
-                  index === active ? 'w-6 bg-accent' : 'w-2 bg-border'
+                  index === activePlan ? 'w-6 bg-accent' : 'w-2 bg-border'
                 }`}
               />
             ))}
@@ -137,10 +187,9 @@ function PricingGrid() {
 
           <button
             type="button"
-            onClick={() => go(active + 1)}
-            disabled={active === lastIndex}
+            onClick={() => step(1)}
             aria-label="Next plan"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-border text-ink disabled:opacity-30"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-border text-ink"
           >
             <FaChevronRight className="h-4 w-4" aria-hidden="true" />
           </button>
