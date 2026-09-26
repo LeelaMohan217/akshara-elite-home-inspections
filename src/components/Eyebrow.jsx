@@ -1,6 +1,6 @@
-function Eyebrow({ children }) {
+function Eyebrow({ children, className = '' }) {
   return (
-    <div className="text-xl font-medium text-[#080808]">{children}</div>
+    <div className={`text-xl font-medium text-[#080808] ${className}`}>{children}</div>
   )
 }
 
