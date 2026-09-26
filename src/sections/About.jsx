@@ -25,7 +25,7 @@ function About() {
             className="order-3 mt-6 h-full w-full rounded-2xl object-cover lg:order-none lg:col-start-1 lg:row-start-1 lg:row-span-5 lg:mt-0"
           />
 
-          <p className="order-4 mt-6 text-base leading-relaxed text-body lg:order-none lg:col-start-2 lg:row-start-3 lg:mt-4">
+          <p className="order-4 mt-10 text-base leading-relaxed text-body lg:order-none lg:col-start-2 lg:row-start-3 lg:mt-4">
             {about.description}
           </p>
 
