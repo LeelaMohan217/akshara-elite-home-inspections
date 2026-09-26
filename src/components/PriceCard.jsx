@@ -12,7 +12,7 @@ function PriceCard({
 }) {
   return (
     <div
-      className={`flex flex-col rounded-2xl p-8 ${
+      className={`flex h-full flex-col rounded-2xl bg-white p-8 ${
         popular ? 'border border-accent ring-1 ring-accent' : 'border border-border'
       }`}
     >

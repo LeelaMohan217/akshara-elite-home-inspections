@@ -28,11 +28,31 @@ const prices = {
       ],
     },
     {
+      name: '3BHK Flat',
+      description: 'For spacious 3BHK apartments and family homes.',
+      price: '₹7,000',
+      features: [
+        'Everything in 2BHK Flat',
+        'Balcony & utility area inspection',
+        'Room-by-room findings summary',
+      ],
+    },
+    {
+      name: '4BHK Flat',
+      description: 'For large 4BHK apartments and duplex flats.',
+      price: '₹7,300',
+      features: [
+        'Everything in 3BHK Flat',
+        'Extra on-site time for larger layouts',
+        'Senior inspector assigned',
+      ],
+    },
+    {
       name: 'Villa',
       description: 'For independent villas and larger homes.',
       price: '₹7,500',
       features: [
-        'Everything in 2BHK Flat',
+        'Everything in 4BHK Flat',
         'Multi stage inspection option',
         'Extended on-site walkthrough',
       ],
