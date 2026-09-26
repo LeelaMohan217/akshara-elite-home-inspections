@@ -1,7 +1,13 @@
-import ContactSection from '../sections/home/Contact'
+import ContactForm from '../sections/contact/ContactForm'
+import Intro from '../sections/contact/Intro'
 
 function Contact() {
-  return <ContactSection />
+  return (
+    <>
+      <Intro />
+      <ContactForm />
+    </>
+  )
 }
 
 export default Contact
