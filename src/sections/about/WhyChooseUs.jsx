@@ -1,23 +1,27 @@
 import about from '../../data/about'
 import Container from '../../components/Container'
+import Eyebrow from '../../components/Eyebrow'
+import ServiceCard from '../../components/ServiceCard'
 
 function WhyChooseUs() {
   return (
     <section className="py-20">
       <Container>
-        <h2 className="text-center text-2xl font-semibold text-ink sm:text-3xl">
-          Why Choose Us
-        </h2>
+        <div className="mx-auto max-w-2xl text-center">
+          <Eyebrow>{about.reasonsEyebrow}</Eyebrow>
+          <h2 className="mt-4 text-4xl font-semibold leading-tight text-ink sm:text-5xl">
+            {about.reasonsHeading}
+          </h2>
+        </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-3">
+        <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-3">
           {about.reasons.map((reason) => (
-            <div
+            <ServiceCard
               key={reason.title}
-              className="rounded-lg border border-border p-6"
-            >
-              <h3 className="font-semibold text-ink">{reason.title}</h3>
-              <p className="mt-2 text-sm text-body">{reason.description}</p>
-            </div>
+              title={reason.title}
+              desc={reason.description}
+              icon={reason.icon}
+            />
           ))}
         </div>
       </Container>
