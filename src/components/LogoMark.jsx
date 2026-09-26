@@ -1,4 +1,4 @@
-function LogoMark({ className = 'h-[0.7em] w-auto' }) {
+function LogoMark({ className = 'h-[0.9em] w-auto' }) {
   return (
     <svg
       viewBox="18 20 80 68"
