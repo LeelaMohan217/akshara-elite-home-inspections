@@ -16,6 +16,21 @@ const slides = Array.from({ length: copies }, (_, copy) =>
 const initialIndex =
   middleStart + Math.max(0, prices.plans.findIndex((plan) => plan.popular))
 
+// Cards shrink step by step away from the center, and are pulled inward so
+// the visible gap between neighbours stays the same.
+const scales = [1, 0.82, 0.66, 0.54]
+const scaleAt = (distance) => scales[Math.min(distance, scales.length - 1)]
+
+function slideTransform(offset, width, gap) {
+  const distance = Math.abs(offset)
+  let center = 0
+  for (let k = 1; k <= distance; k++) {
+    center += (scaleAt(k - 1) * width) / 2 + gap + (scaleAt(k) * width) / 2
+  }
+  const shift = Math.sign(offset) * (center - distance * width)
+  return `translateX(${shift}px) scale(${scaleAt(distance)})`
+}
+
 function PricingGrid() {
   const trackRef = useRef(null)
   const frameRef = useRef(0)
@@ -23,6 +38,7 @@ function PricingGrid() {
   const targetRef = useRef(null)
   const [active, setActive] = useState(initialIndex)
   const [jumping, setJumping] = useState(false)
+  const [cardWidth, setCardWidth] = useState(0)
   const activePlan = active % planCount
 
   const scrollToIndex = useCallback((index, behavior = 'smooth') => {
@@ -33,6 +49,14 @@ function PricingGrid() {
       left: card.offsetLeft - (track.clientWidth - card.clientWidth) / 2,
       behavior,
     })
+  }, [])
+
+  useEffect(() => {
+    const card = trackRef.current?.children[0]
+    if (!card) return
+    const observer = new ResizeObserver(() => setCardWidth(card.offsetWidth))
+    observer.observe(card)
+    return () => observer.disconnect()
   }, [])
 
   useEffect(() => {
@@ -48,11 +72,17 @@ function PricingGrid() {
   const recenter = (index) => {
     if (index >= middleStart && index < middleStart + planCount) return
     const target = middleStart + (index % planCount)
+    const track = trackRef.current
+    // Pause snapping for the jump, or the browser snaps back to the old card.
+    track.style.scrollSnapType = 'none'
     setJumping(true)
     scrollToIndex(target, 'instant')
     setActive(target)
     requestAnimationFrame(() =>
-      requestAnimationFrame(() => setJumping(false)),
+      requestAnimationFrame(() => {
+        track.style.scrollSnapType = ''
+        setJumping(false)
+      }),
     )
   }
 
@@ -121,10 +151,11 @@ function PricingGrid() {
         onPointerDown={() => (targetRef.current = null)}
         onWheel={() => (targetRef.current = null)}
         tabIndex={0}
-        className="relative flex snap-x snap-mandatory gap-6 overflow-x-auto px-[calc(50%-min(42.5vw,190px))] py-8 outline-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="relative flex snap-x snap-mandatory items-center overflow-x-auto px-[calc(50%-min(37.5vw,190px))] py-10 outline-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {slides.map(({ plan, index, copy }, slideIndex) => {
           const isActive = slideIndex === active
+          const offset = slideIndex - active
           const isClone = copy !== Math.floor(copies / 2)
           return (
             <div
@@ -139,14 +170,22 @@ function PricingGrid() {
                   go(slideIndex)
                 }
               }}
-              className={`w-[min(85vw,380px)] shrink-0 snap-center rounded-2xl ${
+              style={{
+                transform: slideTransform(
+                  offset,
+                  cardWidth,
+                  cardWidth < 340 ? 12 : 24,
+                ),
+                zIndex: 10 - Math.min(Math.abs(offset), 9),
+              }}
+              className={`relative w-[min(75vw,380px)] shrink-0 snap-center rounded-2xl ${
                 jumping
                   ? 'transition-none'
-                  : 'transition-all duration-500 ease-out motion-reduce:transition-none'
+                  : 'transition-[transform,box-shadow] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none'
               } ${
                 isActive
-                  ? 'scale-100 opacity-100 shadow-2xl shadow-accent/15'
-                  : 'scale-90 cursor-pointer opacity-50'
+                  ? 'shadow-2xl shadow-accent/15'
+                  : 'cursor-pointer shadow-sm'
               }`}
             >
               <PriceCard
