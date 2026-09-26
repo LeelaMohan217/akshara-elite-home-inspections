@@ -6,7 +6,7 @@ function Services() {
   return (
     <section id="services" className="bg-white py-20">
       <Container>
-        <h2 className="text-center text-2xl font-semibold text-ink">
+        <h2 className="text-center text-4xl font-semibold leading-tight text-ink sm:text-5xl">
           Our Services
         </h2>
         <div className="mt-10 grid gap-8 sm:grid-cols-3">

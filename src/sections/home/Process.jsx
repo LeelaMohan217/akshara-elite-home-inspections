@@ -8,7 +8,7 @@ function Process() {
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <Eyebrow>{processContent.eyebrow}</Eyebrow>
-          <h2 className="mt-4 text-3xl font-semibold text-ink sm:text-4xl">
+          <h2 className="mt-4 text-4xl font-semibold leading-tight text-ink sm:text-5xl">
             {processContent.heading}
           </h2>
           <p className="mt-4 text-base leading-relaxed text-body">
