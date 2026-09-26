@@ -5,7 +5,7 @@ function Logo() {
   return (
     <Link
       to="/"
-      className="flex items-baseline gap-1.5 text-2xl font-bold tracking-tight text-[#080808]"
+      className="flex items-baseline gap-1.5 text-3xl font-bold tracking-tight text-[#080808]"
     >
       <LogoMark />
       Akshara
