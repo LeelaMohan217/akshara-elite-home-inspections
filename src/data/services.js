@@ -2,7 +2,10 @@ import { FaHelmetSafety, FaHouseCircleCheck, FaSignHanging } from 'react-icons/f
 
 export const servicesSection = {
   eyebrow: 'Our Services',
-  headingLines: ['Expert Inspections', 'for Every Stage', 'of Your Home'],
+  // Statement heading: the lead is shown dark, the rest in a lighter grey.
+  headingLead: 'Thorough home inspections for every stage of ownership.',
+  headingRest:
+    'Whether you’re buying, selling, or building new, our certified inspectors give you a clear, detailed picture of the property so every decision is made with confidence.',
 }
 
 const services = [

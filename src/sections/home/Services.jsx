@@ -7,15 +7,11 @@ function Services() {
   return (
     <section id="services" className="bg-white py-20">
       <Container>
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="max-w-5xl">
           <Eyebrow>{servicesSection.eyebrow}</Eyebrow>
-          <h2 className="mt-4 text-4xl font-semibold leading-tight text-ink sm:text-5xl">
-            {servicesSection.headingLines.map((line, i) => (
-              <span key={line} className="sm:block">
-                {line}
-                {i < servicesSection.headingLines.length - 1 && ' '}
-              </span>
-            ))}
+          <h2 className="mt-6 text-3xl font-medium leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-5xl">
+            {servicesSection.headingLead}{' '}
+            <span className="text-neutral-400">{servicesSection.headingRest}</span>
           </h2>
         </div>
         <div className="mt-14 grid gap-8 sm:grid-cols-3">

@@ -1,7 +1,7 @@
 const stats = [
-  { value: '10+', label: 'Years of Experience' },
-  { value: '500+', label: 'Homes Inspected' },
-  { value: '100%', label: 'Certified Inspectors' },
+  { value: '400+', label: 'Homes Inspected' },
+  { value: '98%', label: 'User Satisfaction' },
+  { value: '48 hrs', label: 'Avg. Report Turnaround' },
 ]
 
 export default stats

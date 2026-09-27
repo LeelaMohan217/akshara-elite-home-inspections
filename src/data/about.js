@@ -14,7 +14,10 @@ export const aboutPage = {
 
 const about = {
   eyebrow: 'About Us',
-  headingLines: ['Built on Trust,', 'Backed by Experience'],
+  // Statement heading: the lead is shown dark, the rest in a lighter grey.
+  headingLead: 'Every home has a story worth knowing. At Akshara, we',
+  headingRest:
+    'inspect each property with precision and care, turning hidden issues into clear answers so you can step into your next home with complete confidence.',
   description:
     'We’re a team of certified home inspectors dedicated to giving buyers and sellers a clear, honest picture of a property’s condition. With a sharp eye for detail and a commitment to thorough reporting, we help you make confident decisions about one of the biggest investments of your life.',
   ctaLabel: 'Learn More',

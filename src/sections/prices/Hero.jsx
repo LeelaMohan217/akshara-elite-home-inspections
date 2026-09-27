@@ -11,7 +11,7 @@ function Hero() {
           <h1 className="mt-4 text-4xl font-semibold text-ink sm:text-5xl">
             {prices.heading}
           </h1>
-          <p className="mt-4 text-base leading-relaxed text-body">
+          <p className="mt-4 text-lg leading-relaxed text-description">
             {prices.description}
           </p>
         </div>

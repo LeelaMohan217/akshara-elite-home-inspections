@@ -14,7 +14,7 @@ function Hero() {
             <h1 className="mt-4 text-4xl font-semibold leading-tight text-ink sm:text-5xl">
               {aboutPage.heading}
             </h1>
-            <p className="mt-6 text-base leading-relaxed text-body">
+            <p className="mt-6 text-lg leading-relaxed text-description">
               {aboutPage.description}
             </p>
             <Button href="/contact" className="mt-8 inline-block">
