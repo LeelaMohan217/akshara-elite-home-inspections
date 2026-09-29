@@ -52,7 +52,7 @@ function Process() {
           <img
             src={processImage}
             alt="Bright, modern living room with grey sofas and indoor plants"
-            className="aspect-[16/9] w-full max-w-xs shrink-0 rounded-2xl object-cover"
+            className="aspect-[16/9] w-full shrink-0 rounded-2xl object-cover lg:max-w-xs"
           />
         </div>
 
