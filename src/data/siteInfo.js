@@ -12,9 +12,12 @@ const siteInfo = {
   contactHeading: 'Get in Touch',
   contactDescription:
     'Ready to book your inspection? Reach out and we’ll take it from there.',
-  phone: '+1 (555) 123-4567',
-  email: 'info@aksharaelite.com',
-  address: '123 Main Street, Suite 100, San Antonio, TX 78201',
+  phones: ['+91 96405 47878', '+91 80196 30156'],
+  // Owner's WhatsApp number in international format, digits only.
+  whatsapp: '919640547878',
+  whatsappMessage: 'Hi, I’d like to book a home inspection.',
+  email: 'elitehomeinspections.info@gmail.com',
+  address: 'Hyderabad, Telangana',
 }
 
 export default siteInfo

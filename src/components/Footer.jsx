@@ -6,6 +6,8 @@ import Container from './Container'
 import Logo from './Logo'
 import SocialLinks from './SocialLinks'
 
+
+const [emailUser, emailDomain] = siteInfo.email.split('@')
 function Footer() {
   return (
     <footer className="border-t border-border bg-surface">
@@ -55,20 +57,23 @@ function Footer() {
             <h3 className="text-sm font-semibold text-ink">Contact</h3>
             <ul className="mt-4 flex flex-col gap-3 text-base text-body">
               <li>{siteInfo.address}</li>
-              <li>
-                <a
-                  href={`tel:${siteInfo.phone.replace(/[^+\d]/g, '')}`}
-                  className="hover:text-accent"
-                >
-                  {siteInfo.phone}
-                </a>
-              </li>
+              {siteInfo.phones.map((phone) => (
+                <li key={phone}>
+                  <a
+                    href={`tel:${phone.replace(/[^+\d]/g, '')}`}
+                    className="hover:text-accent"
+                  >
+                    {phone}
+                  </a>
+                </li>
+              ))}
               <li>
                 <a
                   href={`mailto:${siteInfo.email}`}
-                  className="hover:text-accent"
+                  className="[overflow-wrap:anywhere] hover:text-accent"
                 >
-                  {siteInfo.email}
+                  {emailUser}@<wbr />
+                  {emailDomain}
                 </a>
               </li>
             </ul>

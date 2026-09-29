@@ -4,6 +4,8 @@ import Container from '../../components/Container'
 const inputClasses =
   'w-full rounded-md border border-border px-4 py-2.5 text-sm text-body focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent'
 
+
+const [emailUser, emailDomain] = siteInfo.email.split('@')
 function ContactForm() {
   return (
     <section className="py-10">
@@ -13,20 +15,23 @@ function ContactForm() {
             <h2 className="text-sm font-semibold text-ink">Get in touch</h2>
             <ul className="mt-4 flex flex-col gap-3 text-base text-body">
               <li>{siteInfo.address}</li>
-              <li>
-                <a
-                  href={`tel:${siteInfo.phone.replace(/[^+\d]/g, '')}`}
-                  className="hover:text-accent"
-                >
-                  {siteInfo.phone}
-                </a>
-              </li>
+              {siteInfo.phones.map((phone) => (
+                <li key={phone}>
+                  <a
+                    href={`tel:${phone.replace(/[^+\d]/g, '')}`}
+                    className="hover:text-accent"
+                  >
+                    {phone}
+                  </a>
+                </li>
+              ))}
               <li>
                 <a
                   href={`mailto:${siteInfo.email}`}
-                  className="hover:text-accent"
+                  className="[overflow-wrap:anywhere] hover:text-accent"
                 >
-                  {siteInfo.email}
+                  {emailUser}@<wbr />
+                  {emailDomain}
                 </a>
               </li>
             </ul>
