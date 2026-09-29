@@ -1,3 +1,4 @@
+import Audiences from '../sections/service/Audiences'
 import Cta from '../sections/service/Cta'
 import Hero from '../sections/service/Hero'
 import ServicesList from '../sections/service/ServicesList'
@@ -8,6 +9,7 @@ function Service() {
     <>
       <Hero />
       <ServicesList />
+      <Audiences />
       <UseCases />
       <Cta />
     </>

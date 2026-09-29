@@ -1,10 +1,14 @@
 import {
   FaArrowsRotate,
   FaBuilding,
+  FaChartLine,
   FaClipboardCheck,
   FaDroplet,
+  FaEarthAsia,
   FaHouseFloodWater,
+  FaKey,
   FaLayerGroup,
+  FaPeopleRoof,
   FaPlaneDeparture,
 } from 'react-icons/fa6'
 
@@ -82,5 +86,38 @@ export const useCases = [
     desc: 'Book a Complete Inspection during your visit, then schedule a Re-Inspection (or take the Combo) for when the builder says the work is done — we check it even after you’ve flown back.',
     icon: FaPlaneDeparture,
     services: ['complete', 'reinspection', 'combo'],
+  },
+]
+
+export const audienceSection = {
+  eyebrow: 'Who we help',
+  headingLead: 'Every buyer has different worries.',
+  headingRest: 'Our reports are built around yours.',
+}
+
+export const audiences = [
+  {
+    label: 'First-time buyers',
+    title: 'Buying your first flat',
+    desc: 'A clear, plain-language list of issues, so you can talk to your builder about repairs with confidence.',
+    icon: FaKey,
+  },
+  {
+    label: 'NRI buyers',
+    title: 'Owning from abroad',
+    desc: 'Detailed photos and a well-organised report keep you in control, even when you can’t visit often.',
+    icon: FaEarthAsia,
+  },
+  {
+    label: 'Investors',
+    title: 'Buying to rent or resell',
+    desc: 'Know about likely repairs and problem areas before you commit to the purchase or a tenant.',
+    icon: FaChartLine,
+  },
+  {
+    label: 'Families',
+    title: 'Moving in with kids or parents',
+    desc: 'We note safety and everyday-use concerns too, so they shape your decision from the start.',
+    icon: FaPeopleRoof,
   },
 ]
