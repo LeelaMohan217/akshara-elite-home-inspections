@@ -11,8 +11,8 @@ function Hero() {
             Home Inspection Services
           </h1>
           <p className="mt-4 text-lg leading-relaxed text-description">
-            Whichever stage you’re at — buying, selling, or building — we
-            have an inspection built for it.
+            From your first snag list to confirming every fix — an
+            inspection for each stage of your home journey.
           </p>
         </div>
       </Container>
