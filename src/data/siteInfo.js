@@ -9,7 +9,9 @@ const siteInfo = {
   secondaryCtaLabel: 'See our services',
   announcementText: 'Get a fast, thorough home inspection — schedule now',
   announcementHref: '#contact',
+  contactEyebrow: 'Book your inspection',
   contactHeading: 'Get in Touch',
+  contactWhatsappLabel: 'Chat on WhatsApp',
   contactDescription:
     'Ready to book your inspection? Reach out and we’ll take it from there.',
   phones: ['+91 96405 47878', '+91 80196 30156'],
