@@ -24,7 +24,7 @@ function UseCases() {
         </div>
 
         <div className="mt-14 grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {useCases.map((useCase, index) => {
+          {useCases.map((useCase) => {
             const Icon = useCase.icon
             return (
               <div
@@ -33,7 +33,7 @@ function UseCases() {
               >
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-semibold uppercase tracking-[0.15em] text-accent">
-                    Case {String(index + 1).padStart(2, '0')} · {useCase.label}
+                    {useCase.label}
                   </span>
                   <Icon className="h-5 w-5 text-accent" aria-hidden="true" />
                 </div>
