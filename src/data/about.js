@@ -1,10 +1,67 @@
 import { FaCertificate, FaClipboardList, FaComments } from 'react-icons/fa6'
 
 export const aboutPage = {
-  eyebrow: 'Who We Are',
-  heading: 'Every home deserves an honest look.',
-  description:
-    'Akshara Elite Home Inspections is a locally owned inspection company built on trust, training, and attention to detail. We were founded with a simple belief: that every homebuyer and seller in Hyderabad deserves an honest, detailed picture of a property’s condition before any decision is made. Unlike inspectors who rush through a walkthrough with a generic checklist, our team takes the time to understand the specific construction style, age, and quirks of each property, so nothing gets overlooked. We’ve worked with first-time buyers navigating their very first purchase, seasoned investors comparing multiple properties, and sellers who want a clear record of a home’s condition before it goes on the market.',
+  hero: {
+    breadcrumb: 'About us',
+    heading: 'About us',
+    subheading: 'Home inspection company in Hyderabad',
+    caption: 'Pre-handover · Dampness · Electrical',
+  },
+  band: {
+    location: 'Hyderabad, Telangana',
+    tags: ['Pre-Handover', 'Dampness', 'Electrical', 'Complete Home'],
+    noteTitle: 'Photo-documented reports',
+    noteText: 'Every finding is photographed, explained and prioritised.',
+  },
+  intro: {
+    label: 'Who we are',
+    // Statement: the lead is shown dark, the rest in a lighter grey.
+    lead: 'Akshara Elite Home Inspections is a locally owned inspection company built on trust, training, and attention to detail.',
+    rest: 'We believe every homebuyer and seller in Hyderabad deserves an honest, detailed picture of a property before any decision is made.',
+    paragraphs: [
+      'Unlike inspectors who rush through a walkthrough with a generic checklist, our team takes the time to understand the construction style, age, and quirks of each property, so nothing gets overlooked.',
+      'We work with first-time buyers taking their first set of keys, investors comparing multiple properties, and sellers who want a clear record of a home’s condition before it goes on the market.',
+    ],
+  },
+  approach: [
+    {
+      label: 'What we do',
+      title: 'We inspect homes before you commit to them.',
+      text: 'From brand-new flats at handover to older homes with hidden seepage, we find the problems that are easy to miss and expensive to fix later.',
+    },
+    {
+      label: 'How we inspect',
+      title: 'Room by room, against 100+ checkpoints.',
+      text: 'Structure, finishes, doors and windows, plumbing, electricals and safety — each checked methodically, never skimmed.',
+    },
+    {
+      label: 'Tools we use',
+      title: 'Instruments, not guesswork.',
+      text: 'Moisture meters and thermal imaging trace dampness to its source, and electrical testers check wiring, earthing and breakers.',
+    },
+    {
+      label: 'Your report',
+      title: 'Clear findings you can act on.',
+      text: 'A photo-documented report that explains each issue in plain language, so you can take it straight to your builder or seller.',
+    },
+  ],
+  inspect: {
+    label: 'What we inspect',
+    subheading: 'Specialist inspections for every stage of owning a home',
+    word: 'Inspections',
+    text: 'Whether you are collecting keys to a new flat or chasing a damp patch in an older home, there is an inspection built for it.',
+    // Short names so they fit the tall vertical columns.
+    items: ['Pre-Handover', 'Pre-Delivery', 'Dampness', 'Electrical', 'Complete Home'],
+  },
+  reasonsLabel: 'Why choose us',
+  reasonsWord: 'Akshara',
+  closing: {
+    label: 'Akshara Elite',
+    statement:
+      'We make sure the home you are paying for is the home you get. Book your inspection with us today.',
+    linkLabel: 'Contact us',
+    href: '/contact',
+  },
 }
 
 const about = {
