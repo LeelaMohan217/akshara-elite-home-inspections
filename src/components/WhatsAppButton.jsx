@@ -1,9 +1,7 @@
 import { FaWhatsapp } from 'react-icons/fa6'
-import siteInfo from '../data/siteInfo'
+import { whatsappLink } from '../utils/whatsapp'
 
-const href = `https://wa.me/${siteInfo.whatsapp}?text=${encodeURIComponent(
-  siteInfo.whatsappMessage,
-)}`
+const href = whatsappLink()
 
 function WhatsAppButton() {
   return (

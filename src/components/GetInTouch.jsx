@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom'
 import { FaArrowRight, FaEnvelope, FaPhone, FaWhatsapp } from 'react-icons/fa6'
 import siteInfo from '../data/siteInfo'
+import { whatsappLink } from '../utils/whatsapp'
 import Container from './Container'
 import Reveal from './Reveal'
 
-const whatsappHref = `https://wa.me/${siteInfo.whatsapp}?text=${encodeURIComponent(
-  siteInfo.whatsappMessage,
-)}`
+const whatsappHref = whatsappLink()
 
 // Concentric rings, largest first. The translucent fills stack, so the
 // centre reads brightest.
