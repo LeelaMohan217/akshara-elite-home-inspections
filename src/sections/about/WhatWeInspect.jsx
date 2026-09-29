@@ -35,9 +35,9 @@ function WhatWeInspect() {
             <Reveal
               key={item}
               delay={index * 0.08}
-              className="group flex items-center justify-between gap-4 border-t border-ink/15 p-6 transition-colors duration-500 hover:bg-accent lg:h-[30rem] lg:flex-col-reverse lg:items-start lg:justify-between lg:border-l lg:border-t-0"
+              className="group flex items-center justify-start gap-6 border-t border-ink/15 p-6 transition-colors duration-500 hover:bg-accent lg:h-[30rem] lg:flex-col-reverse lg:items-start lg:justify-between lg:border-l lg:border-t-0"
             >
-              <span className="text-sm font-medium text-accent transition-colors duration-500 group-hover:text-white/70">
+              <span className="w-6 shrink-0 text-sm font-medium tabular-nums text-accent transition-colors duration-500 group-hover:text-white/70">
                 {String(index + 1).padStart(2, '0')}
               </span>
               {/* Reads bottom-to-top on desktop, like a book spine. */}
