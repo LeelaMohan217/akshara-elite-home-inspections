@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
+import ScrollToTop from './components/ScrollToTop'
 import WhatsAppButton from './components/WhatsAppButton'
 import About from './pages/About'
 import Contact from './pages/Contact'
@@ -11,6 +12,7 @@ import Service from './pages/Service'
 function App() {
   return (
     <div className="min-h-screen bg-surface text-slate-900">
+      <ScrollToTop />
       <Navbar />
       <main>
         <Routes>
