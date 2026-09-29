@@ -5,6 +5,10 @@ export const aboutPage = {
     breadcrumb: 'About us',
     heading: 'About us',
     subheading: 'Home inspection company in Hyderabad',
+    description: [
+      'We help homebuyers and owners check construction quality, finishing, dampness and electrical safety before they sign, move in, or pay the final instalment.',
+      'Every visit ends with a clear, photo-documented report on the home you are about to own.',
+    ],
     caption: 'Pre-handover · Dampness · Electrical',
   },
   band: {

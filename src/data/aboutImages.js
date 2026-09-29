@@ -4,10 +4,8 @@
 import buildingRoofline from '../assets/about/building-roofline.webp'
 import closingSky from '../assets/about/closing-sky-buildings.webp'
 import floorPlans from '../assets/about/floor-plans.webp'
-import handshakeCloseup from '../assets/about/handshake-closeup.webp'
 import inspectorCeiling from '../assets/about/inspector-checking-ceiling.webp'
 import inspectorClient from '../assets/about/inspector-client-handshake.webp'
-import inspectorSite from '../assets/about/inspector-hard-hat-site.webp'
 import inspectorTowers from '../assets/about/inspector-towers.webp'
 
 const aboutImages = {
@@ -16,10 +14,6 @@ const aboutImages = {
     alt: 'Inspector shaking hands with a homeowner inside a newly built flat',
     position: 'object-[center_40%]',
   },
-  heroThumbs: [
-    { src: handshakeCloseup, alt: 'Close-up of an inspector’s handshake', position: 'object-center' },
-    { src: inspectorSite, alt: 'Inspector in a hard hat facing a building site', position: 'object-[center_35%]' },
-  ],
   band: {
     src: buildingRoofline,
     alt: 'Building roofline against a clear blue sky',

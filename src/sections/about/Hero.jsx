@@ -4,14 +4,6 @@ import aboutImages from '../../data/aboutImages'
 import Container from '../../components/Container'
 import Reveal from '../../components/Reveal'
 
-// Thin corner brackets that frame the title block.
-const CORNERS = [
-  'left-0 top-0 border-l border-t',
-  'right-0 top-0 border-r border-t',
-  'bottom-0 left-0 border-b border-l',
-  'bottom-0 right-0 border-b border-r',
-]
-
 function Hero() {
   const { hero } = aboutPage
 
@@ -27,15 +19,8 @@ function Hero() {
         </Reveal>
 
         <div className="mt-8 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
-          <div className="relative flex flex-col justify-between p-6 sm:p-10 lg:col-span-6">
-            {CORNERS.map((corner) => (
-              <span
-                key={corner}
-                aria-hidden="true"
-                className={`absolute size-6 border-accent/40 sm:size-8 ${corner}`}
-              />
-            ))}
-
+          {/* Title at the top, description at the bottom, level with the photo. */}
+          <div className="flex flex-col justify-between gap-10 lg:col-span-6 lg:py-4">
             <div>
               <Reveal
                 as="h1"
@@ -48,14 +33,11 @@ function Hero() {
               </Reveal>
             </div>
 
-            <Reveal delay={0.2} className="mt-10 flex gap-3 sm:gap-4">
-              {aboutImages.heroThumbs.map((image) => (
-                <img
-                  key={image.alt}
-                  src={image.src}
-                  alt={image.alt}
-                  className={`aspect-[4/3] w-32 rounded-xl object-cover sm:w-40 ${image.position}`}
-                />
+            <Reveal delay={0.2} className="max-w-lg space-y-4 border-t border-border pt-8">
+              {hero.description.map((paragraph) => (
+                <p key={paragraph} className="text-lg leading-relaxed text-description">
+                  {paragraph}
+                </p>
               ))}
             </Reveal>
           </div>
