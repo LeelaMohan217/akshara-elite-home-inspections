@@ -1,4 +1,4 @@
-import aboutImage from '../../assets/about-home.jpg'
+import aboutImage from '../../assets/home/house-exterior.webp'
 import about from '../../data/about'
 import Button from '../../components/Button'
 import Container from '../../components/Container'

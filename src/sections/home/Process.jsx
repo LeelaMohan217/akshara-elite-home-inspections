@@ -1,5 +1,5 @@
 import { FaChevronDown } from 'react-icons/fa6'
-import processImage from '../../assets/process-living-room.jpg'
+import processImage from '../../assets/home/living-room.webp'
 import processContent from '../../data/process'
 import Container from '../../components/Container'
 import Eyebrow from '../../components/Eyebrow'

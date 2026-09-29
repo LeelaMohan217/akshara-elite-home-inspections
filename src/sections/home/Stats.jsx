@@ -1,4 +1,4 @@
-import statsImage from '../../assets/stats-building.jpg'
+import statsImage from '../../assets/home/white-building.webp'
 import defaultStats from '../../data/stats'
 import Container from '../../components/Container'
 import Reveal from '../../components/Reveal'
