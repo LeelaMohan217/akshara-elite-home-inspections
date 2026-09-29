@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import prices from '../../data/prices'
 import Container from '../../components/Container'
 import PriceCard from '../../components/PriceCard'
+import Reveal from '../../components/Reveal'
 
 const planCount = prices.plans.length
 const copies = 5
@@ -138,7 +139,8 @@ function PricingGrid() {
   }
 
   return (
-    <section
+    <Reveal
+      as="section"
       className="py-10"
       aria-roledescription="carousel"
       aria-label="Pricing plans"
@@ -245,7 +247,7 @@ function PricingGrid() {
           .
         </p>
       </Container>
-    </section>
+    </Reveal>
   )
 }
 

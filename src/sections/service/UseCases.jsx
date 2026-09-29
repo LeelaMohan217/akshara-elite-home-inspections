@@ -5,6 +5,7 @@ import {
   useCases,
   useCasesSection,
 } from '../../data/servicePage'
+import Reveal from '../../components/Reveal'
 
 const titleFor = (id) =>
   serviceOfferings.find((service) => service.id === id)?.title
@@ -13,7 +14,7 @@ function UseCases() {
   return (
     <section className="py-20">
       <Container>
-        <div className="max-w-5xl">
+        <Reveal className="max-w-5xl">
           <Eyebrow>{useCasesSection.eyebrow}</Eyebrow>
           <h2 className="mt-6 text-3xl font-medium leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-5xl">
             {useCasesSection.headingLead}{' '}
@@ -21,14 +22,15 @@ function UseCases() {
               {useCasesSection.headingRest}
             </span>
           </h2>
-        </div>
+        </Reveal>
 
         <div className="mt-14 grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {useCases.map((useCase) => {
+          {useCases.map((useCase, index) => {
             const Icon = useCase.icon
             return (
-              <div
+              <Reveal
                 key={useCase.label}
+                delay={index * 0.12}
                 className="flex flex-col rounded-2xl bg-accent/5 p-8"
               >
                 <div className="flex items-center justify-between">
@@ -54,7 +56,7 @@ function UseCases() {
                     </a>
                   ))}
                 </div>
-              </div>
+              </Reveal>
             )
           })}
         </div>

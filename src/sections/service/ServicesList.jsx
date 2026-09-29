@@ -2,17 +2,19 @@ import { FaCheck } from 'react-icons/fa6'
 import { serviceOfferings } from '../../data/servicePage'
 import Button from '../../components/Button'
 import Container from '../../components/Container'
+import Reveal from '../../components/Reveal'
 
 function ServicesList() {
   return (
     <section className="py-10">
       <Container>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-          {serviceOfferings.map((service) => {
+          {serviceOfferings.map((service, index) => {
             const Icon = service.icon
             return (
-              <div
+              <Reveal
                 key={service.id}
+                delay={(index % 2) * 0.12}
                 id={service.id}
                 className="flex scroll-mt-28 flex-col rounded-2xl border border-border p-8"
               >
@@ -42,7 +44,7 @@ function ServicesList() {
                 <Button href="/contact" className="mt-8 block text-center">
                   Book Now
                 </Button>
-              </div>
+              </Reveal>
             )
           })}
         </div>

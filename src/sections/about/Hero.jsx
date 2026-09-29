@@ -3,6 +3,7 @@ import { aboutPage } from '../../data/about'
 import Button from '../../components/Button'
 import Container from '../../components/Container'
 import Eyebrow from '../../components/Eyebrow'
+import Reveal from '../../components/Reveal'
 
 function Hero() {
   return (
@@ -10,19 +11,25 @@ function Hero() {
       <Container>
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <div>
-            <Eyebrow>{aboutPage.eyebrow}</Eyebrow>
-            <h1 className="mt-4 text-4xl font-semibold leading-tight text-ink sm:text-5xl">
+            <Reveal>
+              <Eyebrow>{aboutPage.eyebrow}</Eyebrow>
+            </Reveal>
+            <Reveal as="h1" delay={0.1} className="mt-4 text-4xl font-semibold leading-tight text-ink sm:text-5xl">
               {aboutPage.heading}
-            </h1>
-            <p className="mt-6 text-lg leading-relaxed text-description">
+            </Reveal>
+            <Reveal as="p" delay={0.2} className="mt-6 text-lg leading-relaxed text-description">
               {aboutPage.description}
-            </p>
-            <Button href="/contact" className="mt-8 inline-block">
-              Get in Touch
-            </Button>
+            </Reveal>
+            <Reveal delay={0.3}>
+              <Button href="/contact" className="mt-8 inline-block">
+                Get in Touch
+              </Button>
+            </Reveal>
           </div>
 
-          <img
+          <Reveal
+            as="img"
+            delay={0.15}
             src={aboutImage}
             alt="Home inspector reviewing a property"
             className="w-full rounded-2xl object-cover"

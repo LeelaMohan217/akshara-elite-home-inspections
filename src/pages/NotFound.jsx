@@ -1,11 +1,12 @@
 import Button from '../components/Button'
 import Container from '../components/Container'
+import Reveal from '../components/Reveal'
 
 function NotFound() {
   return (
     <section className="py-32">
       <Container>
-        <div className="mx-auto max-w-xl text-center">
+        <Reveal className="mx-auto max-w-xl text-center">
           <p className="text-sm font-semibold tracking-[0.2em] text-accent">
             404
           </p>
@@ -18,7 +19,7 @@ function NotFound() {
           <Button href="/" className="mt-8 inline-block">
             Back to Home
           </Button>
-        </div>
+        </Reveal>
       </Container>
     </section>
   )

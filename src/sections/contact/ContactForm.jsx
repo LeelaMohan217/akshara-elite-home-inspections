@@ -1,5 +1,6 @@
 import siteInfo from '../../data/siteInfo'
 import Container from '../../components/Container'
+import Reveal from '../../components/Reveal'
 
 const inputClasses =
   'w-full rounded-md border border-border px-4 py-2.5 text-sm text-body focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent'
@@ -11,7 +12,7 @@ function ContactForm() {
     <section className="py-10">
       <Container>
         <div className="mx-auto grid max-w-4xl grid-cols-1 gap-12 lg:grid-cols-2">
-          <div>
+          <Reveal>
             <h2 className="text-sm font-semibold text-ink">Get in touch</h2>
             <ul className="mt-4 flex flex-col gap-3 text-base text-body">
               <li>{siteInfo.address}</li>
@@ -35,9 +36,9 @@ function ContactForm() {
                 </a>
               </li>
             </ul>
-          </div>
+          </Reveal>
 
-          <form className="flex flex-col gap-4">
+          <Reveal as="form" delay={0.15} className="flex flex-col gap-4">
             <div>
               <label
                 htmlFor="name"
@@ -84,7 +85,7 @@ function ContactForm() {
             >
               Send Message
             </button>
-          </form>
+          </Reveal>
         </div>
       </Container>
     </section>
