@@ -1,15 +1,32 @@
 import { FaCamera, FaDroplet, FaListCheck, FaPhone } from 'react-icons/fa6'
 
+// Exact prices are deliberately not published — only the starting price.
 const prices = {
-  eyebrow: 'Pricing',
-  heading: 'Simple, flat‑rate pricing.',
-  description:
-    'One clear price by home size, with the full checklist and report included. Your final quote is confirmed at booking.',
+  hero: {
+    breadcrumb: 'Pricing',
+    heading: 'Pricing',
+    subheading: 'Home inspection pricing in Hyderabad',
+    description:
+      'One clear price for your home, with the full checklist and report included. Your exact quote is confirmed before you book.',
+  },
+  startingPrice: {
+    label: 'Inspections start from',
+    amount: '₹5,000',
+    unit: 'per inspection',
+    factorsLabel: 'Your quote depends on',
+    factors: ['Your home’s size and type — 1BHK flat to villa', 'The inspection you choose'],
+    ctaLabel: 'Get your quote',
+  },
+  plansSection: {
+    label: 'Plans by home size',
+    headingLead: 'One visit, sized to your home.',
+    headingRest: 'Tell us about your home and we’ll confirm the exact price before booking.',
+    ctaLabel: 'Get a quote',
+  },
   plans: [
     {
       name: '1BHK Flat',
       description: 'Ideal for 1BHK apartments and compact flats.',
-      price: '₹5,500',
       features: [
         'Full structural & systems review',
         'Digital report within 48 hrs',
@@ -19,7 +36,6 @@ const prices = {
     {
       name: '2BHK Flat',
       description: 'Ideal for 2BHK apartments and mid-sized flats.',
-      price: '₹6,700',
       features: [
         'Everything in 1BHK Flat',
         'Detailed electrical & plumbing check',
@@ -29,7 +45,6 @@ const prices = {
     {
       name: '3BHK Flat',
       description: 'For spacious 3BHK apartments and family homes.',
-      price: '₹7,000',
       features: [
         'Everything in 2BHK Flat',
         'Balcony & utility area inspection',
@@ -39,7 +54,6 @@ const prices = {
     {
       name: '4BHK Flat',
       description: 'For large 4BHK apartments and duplex flats.',
-      price: '₹7,300',
       features: [
         'Everything in 3BHK Flat',
         'Extra on-site time for larger layouts',
@@ -49,7 +63,6 @@ const prices = {
     {
       name: 'Villa',
       description: 'For independent villas and larger homes.',
-      price: '₹7,500',
       features: [
         'Everything in 4BHK Flat',
         'Multi stage inspection option',
@@ -57,13 +70,12 @@ const prices = {
       ],
     },
   ],
-  priceUnit: 'per inspection',
-  ctaLabel: 'Book This Plan',
   quoteText: 'Larger home, or not sure which plan fits?',
   quoteLinkLabel: 'Ask us for a quote',
   included: {
     eyebrow: 'Every plan includes',
-    heading: 'No add-ons, no surprises.',
+    headingLead: 'No add-ons,',
+    headingRest: 'no surprises.',
     items: [
       {
         title: '52-point snagging checklist',

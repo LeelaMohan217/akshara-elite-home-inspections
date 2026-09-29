@@ -1,13 +1,13 @@
 import GetInTouch from '../components/GetInTouch'
 import Hero from '../sections/prices/Hero'
 import Included from '../sections/prices/Included'
-import PricingGrid from '../sections/prices/PricingGrid'
+import Plans from '../sections/prices/Plans'
 
 function Prices() {
   return (
     <>
       <Hero />
-      <PricingGrid />
+      <Plans />
       <Included />
       <GetInTouch />
     </>
