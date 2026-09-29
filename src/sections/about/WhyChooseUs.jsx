@@ -2,7 +2,7 @@ import { FaPlus } from 'react-icons/fa6'
 import about, { aboutPage } from '../../data/about'
 import Container from '../../components/Container'
 import Reveal from '../../components/Reveal'
-import SectionLabel from './SectionLabel'
+import SectionLabel from '../../components/SectionLabel'
 
 function WhyChooseUs() {
   return (

@@ -59,13 +59,6 @@ export const aboutPage = {
   },
   reasonsLabel: 'Why choose us',
   reasonsWord: 'Akshara',
-  closing: {
-    label: 'Akshara Elite',
-    statement:
-      'We make sure the home you are paying for is the home you get. Book your inspection with us today.',
-    linkLabel: 'Contact us',
-    href: '/contact',
-  },
 }
 
 const about = {

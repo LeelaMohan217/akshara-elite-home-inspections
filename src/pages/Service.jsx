@@ -1,5 +1,5 @@
 import Audiences from '../sections/service/Audiences'
-import Cta from '../sections/service/Cta'
+import GetInTouch from '../components/GetInTouch'
 import Hero from '../sections/service/Hero'
 import ServicesList from '../sections/service/ServicesList'
 import UseCases from '../sections/service/UseCases'
@@ -11,7 +11,7 @@ function Service() {
       <ServicesList />
       <Audiences />
       <UseCases />
-      <Cta />
+      <GetInTouch />
     </>
   )
 }

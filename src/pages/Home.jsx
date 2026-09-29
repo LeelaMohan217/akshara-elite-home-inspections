@@ -1,5 +1,5 @@
 import About from '../sections/home/About'
-import Contact from '../sections/home/Contact'
+import GetInTouch from '../components/GetInTouch'
 import Faq from '../sections/home/Faq'
 import Hero from '../sections/home/Hero'
 import Process from '../sections/home/Process'
@@ -17,7 +17,7 @@ function Home() {
       <Services />
       <Testimonials />
       <Faq />
-      <Contact />
+      <GetInTouch />
     </>
   )
 }

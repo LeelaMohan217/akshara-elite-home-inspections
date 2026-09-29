@@ -1,6 +1,6 @@
 import Approach from '../sections/about/Approach'
 import Band from '../sections/about/Band'
-import Closing from '../sections/about/Closing'
+import GetInTouch from '../components/GetInTouch'
 import Hero from '../sections/about/Hero'
 import Intro from '../sections/about/Intro'
 import WhatWeInspect from '../sections/about/WhatWeInspect'
@@ -15,7 +15,7 @@ function About() {
       <Approach />
       <WhatWeInspect />
       <WhyChooseUs />
-      <Closing />
+      <GetInTouch />
     </>
   )
 }

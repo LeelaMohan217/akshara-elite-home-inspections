@@ -24,31 +24,63 @@ export const servicesSection = {
   },
 }
 
+// Shared by the home page cards and the Services page. `id` is the anchor on
+// the Services page; `includes` is only shown there.
 const services = [
   {
+    id: 'pre-handover',
     title: 'Pre-Handover Home Inspection',
     desc: 'Ideal for brand new flats before taking keys from builder. We verify construction quality and finishing in detail.',
     icon: FaKey,
+    includes: [
+      'Tiles, doors & windows, electrical, plumbing, walls and fixtures',
+      'Area, ceiling height and floor slope measurements',
+      'Photo report you can hand straight to your builder',
+    ],
   },
   {
+    id: 'ready-to-move',
     title: 'Ready-to-Move / Pre-Delivery Inspection',
     desc: 'For already completed homes where possession is due. We highlight snags before you sign handover documents.',
     icon: FaHouseCircleCheck,
+    includes: [
+      'Finishes, fixtures, plumbing and electricals checked',
+      'Every snag listed before you sign handover documents',
+      'Photo report you can hand straight to your builder',
+    ],
   },
   {
+    id: 'dampness',
     title: 'Leakage & Dampness Inspection',
     desc: 'Targeted inspection using moisture meters and thermal tools to locate water seepage sources before damage spreads.',
     icon: FaDroplet,
+    includes: [
+      'Moisture meter and thermal imaging checks',
+      'How the damp spreads, read to trace its source',
+      'Plain-English findings on what needs repairing',
+    ],
   },
   {
+    id: 'electrical',
     title: 'Electrical & Safety Audit',
     desc: 'Checks on DB, wiring, earthing, MCB selection and overall electrical safety for peace of mind.',
     icon: FaBolt,
+    includes: [
+      'Distribution board (DB) and wiring checked',
+      'Earthing and MCB selection verified',
+      'Overall electrical safety assessed',
+    ],
   },
   {
+    id: 'complete',
     title: 'Complete Home Inspection',
     desc: 'Comprehensive assessment across 100+ checkpoints covering finishes, fixtures, plumbing and safety.',
     icon: FaClipboardCheck,
+    includes: [
+      '100+ checkpoints across the whole home',
+      'Finishes, fixtures, plumbing and safety covered',
+      'Photo-documented report of every finding',
+    ],
   },
 ]
 

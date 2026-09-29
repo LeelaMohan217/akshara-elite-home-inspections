@@ -2,8 +2,6 @@ import {
   FaArrowsRotate,
   FaBuilding,
   FaChartLine,
-  FaClipboardCheck,
-  FaDroplet,
   FaEarthAsia,
   FaHouseFloodWater,
   FaKey,
@@ -12,18 +10,29 @@ import {
   FaPlaneDeparture,
 } from 'react-icons/fa6'
 
-export const serviceOfferings = [
-  {
-    id: 'snagging',
-    title: 'Full Snagging Inspection',
-    desc: 'A top-to-bottom, room-by-room check of your new home before you accept the keys — every defect found, photographed and written down.',
-    icon: FaClipboardCheck,
-    includes: [
-      'Tiles, doors & windows, electrical, plumbing, walls and fixtures',
-      'Area, ceiling height and floor slope measurements',
-      'Photo report you can hand straight to your builder',
-    ],
-  },
+export const serviceHero = {
+  breadcrumb: 'Services',
+  heading: 'Services',
+  subheading: 'Home inspection services in Hyderabad',
+  description:
+    'From your first snag list to confirming every fix — an inspection for each stage of your home journey.',
+  caption: 'Pre-handover · Dampness · Electrical',
+}
+
+// The main service cards come from data/services.js, shared with the home page.
+export const serviceListSection = {
+  label: 'What we offer',
+  headingLead: 'Five inspections,',
+  headingRest: 'each built for a different moment in owning your home.',
+  bookLabel: 'Book now',
+}
+
+export const addonsSection = {
+  label: 'Add-ons',
+  heading: 'Follow-up visits once the builder has made repairs.',
+}
+
+export const serviceAddons = [
   {
     id: 'verification',
     title: 'Repair Verification Visit',
@@ -41,20 +50,9 @@ export const serviceOfferings = [
     desc: 'Both visits in a single booking: we find the defects first, then come back to make sure they’re genuinely gone.',
     icon: FaLayerGroup,
     includes: [
-      'Full Snagging Inspection and report',
+      'Pre-Handover Home Inspection and report',
       'Repair Verification Visit after the builder’s repairs',
       'Booked once, scheduled around your builder',
-    ],
-  },
-  {
-    id: 'damp',
-    title: 'Damp & Leak Diagnosis',
-    desc: 'Stains that return after every repaint usually have a hidden cause. We track down where the water is really getting in.',
-    icon: FaDroplet,
-    includes: [
-      'Moisture measurements around the affected area',
-      'How the damp spreads, read to trace its source',
-      'Plain-English findings on what needs repairing',
     ],
   },
 ]
@@ -69,23 +67,23 @@ export const useCases = [
   {
     label: 'Handover is close',
     title: 'Your builder is ready to hand over the keys',
-    desc: 'Book a Full Snagging Inspection first to get every defect in writing. Once repairs are done, a Repair Verification Visit — or the Snag & Verify Package booked together — confirms nothing slipped through before you sign.',
+    desc: 'Book a Pre-Handover Home Inspection first to get every defect in writing. Once repairs are done, a Repair Verification Visit — or the Snag & Verify Package booked together — confirms nothing slipped through before you sign.',
     icon: FaBuilding,
-    services: ['snagging', 'verification', 'package'],
+    services: ['pre-handover', 'verification', 'package'],
   },
   {
     label: 'Damp that won’t go away',
     title: 'Repainting hasn’t fixed it',
-    desc: 'A Damp & Leak Diagnosis measures moisture around the problem area and studies how it spreads, so the real cause gets repaired instead of painted over again.',
+    desc: 'A Leakage & Dampness Inspection measures moisture around the problem area and studies how it spreads, so the real cause gets repaired instead of painted over again.',
     icon: FaHouseFloodWater,
-    services: ['damp'],
+    services: ['dampness'],
   },
   {
     label: 'Living overseas',
     title: 'You’re only in town for a few days',
-    desc: 'Schedule the Full Snagging Inspection while you’re here. When the builder reports the fixes are complete, we carry out the Repair Verification Visit and send you the results wherever you are.',
+    desc: 'Schedule the Pre-Handover Home Inspection while you’re here. When the builder reports the fixes are complete, we carry out the Repair Verification Visit and send you the results wherever you are.',
     icon: FaPlaneDeparture,
-    services: ['snagging', 'verification', 'package'],
+    services: ['pre-handover', 'verification', 'package'],
   },
 ]
 

@@ -1,4 +1,4 @@
-// Small "• Label" marker used to open About page sections.
+// Small "• Label" marker used to open editorial sections.
 function SectionLabel({ children, className = '' }) {
   return (
     <p className={`inline-flex items-center gap-2 text-xs font-medium uppercase tracking-wider sm:text-sm text-ink ${className}`}>

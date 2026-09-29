@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import { FaArrowRight, FaEnvelope, FaPhone, FaWhatsapp } from 'react-icons/fa6'
-import siteInfo from '../../data/siteInfo'
-import Container from '../../components/Container'
-import Reveal from '../../components/Reveal'
+import siteInfo from '../data/siteInfo'
+import Container from './Container'
+import Reveal from './Reveal'
 
 const whatsappHref = `https://wa.me/${siteInfo.whatsapp}?text=${encodeURIComponent(
   siteInfo.whatsappMessage,
@@ -20,7 +20,8 @@ const RINGS = [
   'size-[4.5rem]',
 ]
 
-function Contact() {
+// Shown before the footer on every page except Contact, which has its own form.
+function GetInTouch() {
   const phone = siteInfo.phones[0]
 
   return (
@@ -102,4 +103,4 @@ function Contact() {
   )
 }
 
-export default Contact
+export default GetInTouch

@@ -2,7 +2,6 @@
 // in src/assets/about and change the import below — the sections don't need
 // edits. `position` keeps the subject in frame when a photo is cropped.
 import buildingRoofline from '../assets/about/building-roofline.webp'
-import closingSky from '../assets/about/closing-sky-buildings.webp'
 import floorPlans from '../assets/about/floor-plans.webp'
 import inspectorCeiling from '../assets/about/inspector-checking-ceiling.webp'
 import inspectorClient from '../assets/about/inspector-client-handshake.webp'
@@ -33,11 +32,6 @@ const aboutImages = {
     src: inspectorTowers,
     alt: 'Inspector in a helmet looking up at apartment towers under construction',
     position: 'object-[center_62%]',
-  },
-  closing: {
-    src: closingSky,
-    alt: '',
-    position: 'object-bottom',
   },
 }
 

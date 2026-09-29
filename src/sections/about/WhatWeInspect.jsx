@@ -2,7 +2,7 @@ import { aboutPage } from '../../data/about'
 import aboutImages from '../../data/aboutImages'
 import Container from '../../components/Container'
 import Reveal from '../../components/Reveal'
-import SectionLabel from './SectionLabel'
+import SectionLabel from '../../components/SectionLabel'
 
 function WhatWeInspect() {
   const { inspect } = aboutPage
