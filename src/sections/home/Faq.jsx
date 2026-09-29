@@ -2,21 +2,22 @@ import { FaPlus } from 'react-icons/fa6'
 import Container from '../../components/Container'
 import Eyebrow from '../../components/Eyebrow'
 import faqs, { faqSection } from '../../data/faqs'
+import Reveal from '../../components/Reveal'
 
 function Faq() {
   return (
     <section id="faq" className="py-20">
       <Container>
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-2xl text-center">
           <Eyebrow>{faqSection.eyebrow}</Eyebrow>
           <h2 className="mt-4 text-4xl font-semibold leading-tight text-ink sm:text-5xl">
             {faqSection.heading}
           </h2>
-        </div>
+        </Reveal>
 
         <div className="mx-auto mt-14 max-w-3xl divide-y divide-border border-y border-border">
-          {faqs.map((faq) => (
-            <details key={faq.question} className="group py-6">
+          {faqs.map((faq, index) => (
+            <Reveal as="details" key={faq.question} delay={index * 0.08} className="group py-6">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-left text-lg font-semibold text-ink [&::-webkit-details-marker]:hidden">
                 {faq.question}
                 <FaPlus
@@ -27,7 +28,7 @@ function Faq() {
               <p className="mt-4 text-base leading-relaxed text-body">
                 {faq.answer}
               </p>
-            </details>
+            </Reveal>
           ))}
         </div>
       </Container>

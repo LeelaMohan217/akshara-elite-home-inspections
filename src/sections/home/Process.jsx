@@ -3,6 +3,7 @@ import processImage from '../../assets/process-living-room.jpg'
 import processContent from '../../data/process'
 import Container from '../../components/Container'
 import Eyebrow from '../../components/Eyebrow'
+import Reveal from '../../components/Reveal'
 
 // Desktop zigzag layout, as percentages of the container width.
 const CARD_WIDTH = 36
@@ -39,7 +40,7 @@ function Process() {
     <section id="process" className="py-20">
       <Container>
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-2xl">
+          <Reveal className="max-w-2xl">
             <Eyebrow>{processContent.eyebrow}</Eyebrow>
             <h2 className="mt-4 text-4xl font-semibold leading-tight text-ink sm:text-5xl">
               {processContent.heading}
@@ -47,9 +48,11 @@ function Process() {
             <p className="mt-4 text-lg leading-relaxed text-description">
               {processContent.description}
             </p>
-          </div>
+          </Reveal>
 
-          <img
+          <Reveal
+            as="img"
+            delay={0.15}
             src={processImage}
             alt="Bright, modern living room with grey sofas and indoor plants"
             className="aspect-[16/9] w-full shrink-0 rounded-2xl object-cover lg:max-w-xs"
@@ -63,7 +66,8 @@ function Process() {
             const connector = index < steps.length - 1 ? connectorStyle(index) : null
 
             return (
-              <li
+              <Reveal
+                as="li"
                 key={step.number}
                 style={{
                   '--offset': `${CARD_OFFSETS[index]}%`,
@@ -117,7 +121,7 @@ function Process() {
                     />
                   </span>
                 )}
-              </li>
+              </Reveal>
             )
           })}
         </ol>

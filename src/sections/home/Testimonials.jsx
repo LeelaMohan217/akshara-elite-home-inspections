@@ -2,21 +2,24 @@ import { FaStar } from 'react-icons/fa6'
 import Container from '../../components/Container'
 import Eyebrow from '../../components/Eyebrow'
 import testimonials, { testimonialsSection } from '../../data/testimonials'
+import Reveal from '../../components/Reveal'
 
 function Testimonials() {
   return (
     <section id="testimonials" className="py-20">
       <Container>
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-2xl text-center">
           <Eyebrow>{testimonialsSection.eyebrow}</Eyebrow>
           <h2 className="mt-4 text-4xl font-semibold leading-tight text-ink sm:text-5xl">
             {testimonialsSection.heading}
           </h2>
-        </div>
+        </Reveal>
 
         <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-3">
-          {testimonials.map((testimonial) => (
-            <figure
+          {testimonials.map((testimonial, index) => (
+            <Reveal
+              as="figure"
+              delay={index * 0.12}
               key={testimonial.role}
               className="flex flex-col rounded-2xl border border-border p-8"
             >
@@ -32,7 +35,7 @@ function Testimonials() {
                 <p className="font-semibold text-ink">{testimonial.name}</p>
                 <p className="text-sm text-muted">{testimonial.role}</p>
               </figcaption>
-            </figure>
+            </Reveal>
           ))}
         </div>
       </Container>
