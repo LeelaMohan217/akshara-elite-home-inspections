@@ -22,7 +22,7 @@ export const serviceHero = {
 // The main service cards come from data/services.js, shared with the home page.
 export const serviceListSection = {
   label: 'What we offer',
-  headingLead: 'Five inspections,',
+  headingLead: 'Seven inspections,',
   headingRest: 'each built for a different moment in owning your home.',
   bookLabel: 'Book now',
 }

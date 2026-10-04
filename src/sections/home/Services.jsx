@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { FaArrowRight } from 'react-icons/fa6'
 import Container from '../../components/Container'
 import Eyebrow from '../../components/Eyebrow'
-import services, { servicesSection } from '../../data/services'
+import { homeServices, servicesSection } from '../../data/services'
 import Reveal from '../../components/Reveal'
 import ServiceCtaTile from '../../components/ServiceCtaTile'
 
@@ -56,7 +56,7 @@ function Services() {
           </h2>
         </Reveal>
         <div className="mt-14 grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => (
+          {homeServices.map((service, index) => (
             <Reveal key={service.title} delay={index * 0.12} className="h-full">
               <ServiceTile
                 {...service}
@@ -64,8 +64,8 @@ function Services() {
               />
             </Reveal>
           ))}
-          <Reveal delay={services.length * 0.12} className="h-full">
-            <ServiceCtaTile />
+          <Reveal delay={homeServices.length * 0.12} className="h-full">
+            <ServiceCtaTile cta={servicesSection.moreCta} />
           </Reveal>
         </div>
       </Container>

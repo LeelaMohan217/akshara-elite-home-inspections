@@ -83,7 +83,8 @@ function ServicesList() {
           </Reveal>
         </div>
 
-        {/* Five services plus the help card fill an even 3×2 (or 2×3) grid. */}
+        {/* Seven services plus the help card: the card spans two columns on
+            desktop so the last row of three stays full. */}
         <div className="mt-14 grid auto-rows-fr grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <Reveal
@@ -95,7 +96,7 @@ function ServicesList() {
               <ServiceCard service={service} number={String(index + 1).padStart(2, '0')} />
             </Reveal>
           ))}
-          <Reveal delay={0.24} className="h-full">
+          <Reveal delay={0.24} className="h-full lg:col-span-2">
             <ServiceCtaTile />
           </Reveal>
         </div>

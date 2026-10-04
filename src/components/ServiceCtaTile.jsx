@@ -2,10 +2,9 @@ import { Link } from 'react-router-dom'
 import { FaArrowRight } from 'react-icons/fa6'
 import { servicesSection } from '../data/services'
 
-// Gradient card that fills the last slot of a service grid.
-function ServiceCtaTile() {
-  const { cta } = servicesSection
-
+// Gradient card that fills the last slot of a service grid. Pass `cta`
+// ({ heading, description, label, href }) to change its text and link.
+function ServiceCtaTile({ cta = servicesSection.cta }) {
   return (
     <div className="relative flex h-full flex-col overflow-hidden rounded-3xl bg-gradient-to-br from-accent to-[#0a2f8a] p-8 text-white">
       {/* Soft glows for depth. */}
