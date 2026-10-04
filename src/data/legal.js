@@ -45,6 +45,14 @@ export const privacyPolicy = {
       ],
     },
     {
+      id: 'cookies',
+      heading: 'Cookies',
+      paragraphs: [
+        'This website does not set any cookies and does not use advertising or tracking tools, so there is nothing to accept or turn off.',
+        'Our font is loaded from Google Fonts, which means your browser connects to Google’s servers and Google can see your IP address. Google states that it does not use this to identify or track you. If we ever add tools that use cookies, we will update this section and ask for your consent where required.',
+      ],
+    },
+    {
       id: 'sharing',
       heading: 'Who we share it with',
       paragraphs: [
