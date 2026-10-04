@@ -12,6 +12,20 @@
   --color-surface-dark: #111111;
   --color-accent: #146ef5;
   --color-accent-hover: #0f5cd1;
+
+  /* Endless horizontal scroll: the track holds two copies of its items, so
+     sliding it by half its width loops seamlessly. */
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-marquee-reverse: marquee 40s linear infinite reverse;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 html {
