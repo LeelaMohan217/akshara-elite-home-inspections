@@ -42,12 +42,12 @@ function Footer() {
             <ul className="mt-4 flex flex-col gap-3">
               {legalLinks.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-base text-body hover:text-accent"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -81,7 +81,7 @@ function Footer() {
         </div>
 
         <div className="mt-12 border-t border-border pt-8 text-center text-sm text-muted">
-          <p>© 2025 {siteInfo.name}. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} {siteInfo.name}. All rights reserved.</p>
         </div>
       </Container>
     </footer>

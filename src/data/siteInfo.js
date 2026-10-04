@@ -1,6 +1,6 @@
 const siteInfo = {
   name: 'Akshara Elite Home Inspections',
-  eyebrow: 'Certified Home Inspections',
+  eyebrow: 'Home Inspections in Hyderabad',
   tagline: 'Know the home before you make it yours.',
   description:
     'Akshara Elite Home Inspections delivers detailed, honest assessments to protect your investment before you buy or sell.',

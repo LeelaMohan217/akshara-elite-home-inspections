@@ -1,4 +1,5 @@
 import About from '../sections/home/About'
+import Areas from '../sections/home/Areas'
 import GetInTouch from '../components/GetInTouch'
 import Faq from '../sections/home/Faq'
 import Hero from '../sections/home/Hero'
@@ -16,6 +17,7 @@ function Home() {
       <Process />
       <Services />
       <Testimonials />
+      <Areas />
       <Faq />
       <GetInTouch />
     </>

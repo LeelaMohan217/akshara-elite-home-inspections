@@ -20,7 +20,7 @@ const process = {
       duration: '2–4 Hours',
       icon: FaMagnifyingGlass,
       description:
-        'A certified inspector examines every major system, top to bottom.',
+        'An experienced inspector checks the home room by room, top to bottom.',
     },
     {
       number: '3',

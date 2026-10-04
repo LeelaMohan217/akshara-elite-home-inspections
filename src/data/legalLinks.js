@@ -1,7 +1,7 @@
+// The site sets no cookies, so there's no separate cookie policy.
 const legalLinks = [
-  { label: 'Terms of Service', href: '#' },
-  { label: 'Privacy Policy', href: '#' },
-  { label: 'Cookie Policy', href: '#' },
+  { label: 'Terms of Service', href: '/terms' },
+  { label: 'Privacy Policy', href: '/privacy' },
 ]
 
 export default legalLinks

@@ -1,4 +1,4 @@
-import { FaCertificate, FaClipboardList, FaComments } from 'react-icons/fa6'
+import { FaClipboardList, FaComments, FaUserCheck } from 'react-icons/fa6'
 
 export const aboutPage = {
   hero: {
@@ -68,16 +68,16 @@ const about = {
   headingRest:
     'inspect each property with precision and care, turning hidden issues into clear answers so you can step into your next home with complete confidence.',
   description:
-    'We’re a team of certified home inspectors dedicated to giving buyers and sellers a clear, honest picture of a property’s condition. With a sharp eye for detail and a commitment to thorough reporting, we help you make confident decisions about one of the biggest investments of your life.',
+    'We’re a team of experienced home inspectors dedicated to giving buyers and sellers a clear, honest picture of a property’s condition. With a sharp eye for detail and a commitment to thorough reporting, we help you make confident decisions about one of the biggest investments of your life.',
   ctaLabel: 'Learn More',
   reasonsEyebrow: 'Why Choose Us',
   reasonsHeading: 'Inspections You Can Rely On',
   reasons: [
     {
-      title: 'Licensed & Certified',
-      icon: FaCertificate,
+      title: 'Experienced Inspectors',
+      icon: FaUserCheck,
       description:
-        'Every inspection is carried out by a fully licensed, certified inspector you can trust.',
+        'Every inspection is carried out by a trained inspector who knows how homes in Hyderabad are built.',
     },
     {
       title: 'Detailed Reporting',
