@@ -31,7 +31,7 @@ function About() {
               {about.description}
             </p>
 
-            <Button href="/contact" className="mt-8 inline-block">
+            <Button href="/about" className="mt-8 inline-block">
               {about.ctaLabel}
             </Button>
           </Reveal>

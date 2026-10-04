@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import siteInfo from '../data/siteInfo'
 import Button from './Button'
 import Container from './Container'
@@ -9,6 +10,10 @@ import NavLinks from './NavLinks'
 
 function Navbar() {
   const [open, setOpen] = useState(false)
+  const { key } = useLocation()
+
+  // Close the mobile menu on any navigation, including the logo link inside it.
+  useEffect(() => setOpen(false), [key])
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-surface">
@@ -24,7 +29,7 @@ function Navbar() {
             {siteInfo.navCtaLabel}
           </Button>
 
-          <MenuButton open={false} onClick={() => setOpen(true)} />
+          <MenuButton open={open} onClick={() => setOpen(true)} />
         </div>
       </Container>
 

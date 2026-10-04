@@ -10,10 +10,15 @@ function MobileMenu({ onClose }) {
   useEffect(() => {
     const { overflow } = document.body.style
     document.body.style.overflow = 'hidden'
+    const closeOnEscape = (event) => {
+      if (event.key === 'Escape') onClose()
+    }
+    document.addEventListener('keydown', closeOnEscape)
     return () => {
       document.body.style.overflow = overflow
+      document.removeEventListener('keydown', closeOnEscape)
     }
-  }, [])
+  }, [onClose])
 
   return (
     <div className="fixed inset-0 z-50 flex flex-col bg-surface lg:hidden">
