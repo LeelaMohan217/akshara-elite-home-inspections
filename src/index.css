@@ -1,1 +1,38 @@
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #333333;
+  --color-body: #333333;
+  --color-muted: #6b7280;
+  --color-description: #5a5a5a;
+  --color-border: #e5e5e5;
+  --color-surface: #ffffff;
+  --color-surface-dark: #111111;
+  --color-accent: #146ef5;
+  --color-accent-hover: #0f5cd1;
+
+  /* Endless horizontal scroll: the track holds two copies of its items, so
+     sliding it by half its width loops seamlessly. */
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-marquee-reverse: marquee 40s linear infinite reverse;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-body);
+}
