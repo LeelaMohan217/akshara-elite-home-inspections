@@ -28,7 +28,14 @@ function LegalPage({ content }) {
         </Reveal>
 
         <div className="mt-14 grid grid-cols-1 gap-12 border-t border-border pt-12 lg:grid-cols-12">
-          <Reveal as="nav" aria-label="Contents" className="hidden lg:col-span-3 lg:block">
+          {/* This column is as tall as the page (so the list can stick), so reveal
+              it as soon as any of it shows rather than at 20% visibility. */}
+          <Reveal
+            as="nav"
+            aria-label="Contents"
+            viewport={{ once: true, amount: 0 }}
+            className="hidden lg:col-span-3 lg:block"
+          >
             <ol className="sticky top-28 flex flex-col gap-3 text-sm">
               {content.sections.map((section, index) => (
                 <li key={section.id}>
