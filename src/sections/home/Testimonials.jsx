@@ -4,6 +4,13 @@ import Eyebrow from '../../components/Eyebrow'
 import testimonials, { testimonialsSection } from '../../data/testimonials'
 import Reveal from '../../components/Reveal'
 
+// A different brand-blue gradient per person, so the letter avatars stand apart.
+const AVATAR_COLORS = [
+  'from-accent to-[#0a2f8a] shadow-accent/30',
+  'from-[#5aa2ff] to-accent shadow-accent/30',
+  'from-[#0f55cc] to-[#071d52] shadow-[#0a2f8a]/30',
+]
+
 function initials(name) {
   return name
     .split(' ')
@@ -14,6 +21,8 @@ function initials(name) {
 }
 
 function Testimonials() {
+  if (!testimonialsSection.published) return null
+
   return (
     <section id="testimonials" className="py-20">
       <Container>
@@ -50,7 +59,12 @@ function Testimonials() {
               </blockquote>
 
               <figcaption className="mt-8 flex items-center gap-4 border-t border-border pt-6">
-                <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-accent/10 text-sm font-semibold text-accent">
+                <span
+                  aria-hidden="true"
+                  className={`flex size-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br text-base font-semibold tracking-wide text-white shadow-md ring-4 ring-white ${
+                    AVATAR_COLORS[index % AVATAR_COLORS.length]
+                  }`}
+                >
                   {initials(testimonial.name)}
                 </span>
                 <span>
